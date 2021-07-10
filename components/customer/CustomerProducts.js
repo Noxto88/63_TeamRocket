@@ -1,7 +1,16 @@
 import React from "react";
 import ProductCard from "../common/ProductsCard";
+import { addItem } from '../../redux/cartSlice'
+import {  useDispatch } from "react-redux";
+
 function CustomerProducts({ products }) {
-  console.log({ products });
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch(addItem(products));
+    console.log("called");
+  };
+
   return (
     <div className="container mx-auto px-6">
       <h3 className="text-gray-700 text-2xl font-medium">Products</h3>
@@ -9,7 +18,9 @@ function CustomerProducts({ products }) {
         {products.map((product) => (
           <div key={products._id}>
             <ProductCard {...product}>
-              <button className="bg-primary text-white px-4 py-2">
+              <button 
+              onClick={addToCart}
+              className="bg-primary text-white px-4 py-2">
                 Add Item
               </button>
             </ProductCard>
