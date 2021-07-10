@@ -1,7 +1,7 @@
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { getClient, usePreviewSubscription } from "../../utils/sanity";
-import ProductsPage from "../../components/common/ProductsPage";
+import CustomerProducts from "../../components/customer/CustomerProducts";
 
 const query = `//groq
   *[_type == "product"]
@@ -18,7 +18,7 @@ function ProductsPageContainer({ productsData, preview }) {
     enabled: preview || router.query.preview !== null,
   });
 
-  return <ProductsPage products={products} />;
+  return <CustomerProducts products={products} />;
 }
 
 export async function getStaticProps({ params = {}, preview = false }) {
