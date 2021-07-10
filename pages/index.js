@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import SlidingContainer from '../components/common/SlidingContainer'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import SlidingContainer from "../components/common/SlidingContainer";
 import { useSelector, useDispatch } from "react-redux";
 import {
   openSlidingComponentState,
@@ -20,11 +20,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav>
-        <ul className='flex'>
-          <button onClick={() => dispatch(openSlidingComponent("Log In"))}
-
-          className='px-4'>Login</button>
-          <li className='px-4'>Sign up</li>
+        <ul className="flex">
+          <button
+            onClick={() => dispatch(openSlidingComponent("Log In"))}
+            className="px-4"
+          >
+            Login
+          </button>
+          <li className="px-4">Sign up</li>
         </ul>
       </nav>
       <main className={styles.main}>
@@ -33,7 +36,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -74,12 +77,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }

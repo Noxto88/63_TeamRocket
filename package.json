@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pretty": "prettier --write \"./**/*.{js,jsx,json,ts,tsx}\""
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
@@ -21,6 +22,7 @@
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "postcss": "^8.3.5",
+    "prettier": "2.3.2",
     "tailwindcss": "^2.2.4"
   }
 }
