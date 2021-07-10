@@ -8,12 +8,17 @@ import {
   openSlidingComponent,
 } from "../redux/sliderSlice";
 import LogIn from "../components/Home/LogIn";
-import SignIn from "../components/Home/SignIn";
+import SignUp from "../components/Home/SignUp";
 
 export default function Home() {
   const dispatch = useDispatch();
   const sliderState = useSelector(openSlidingComponentState);
-
+  const sliderComponents = {
+    "Sign up": <SignUp />,
+    "Log in": <LogIn />,
+  }
+  const renderedComponent = sliderComponents[sliderState];
+  console.log({renderedComponent})
   return (
     <div className={styles.container}>
       <Head>
@@ -24,12 +29,17 @@ export default function Home() {
       <nav>
         <ul className="flex">
           <button
-            onClick={() => dispatch(openSlidingComponent("Log In"))}
+            onClick={() => dispatch(openSlidingComponent("Log in"))}
             className="px-4"
           >
             Login
           </button>
-          <li className="px-4">Sign up</li>
+          <button
+            onClick={() => dispatch(openSlidingComponent("Sign up"))}
+            className="px-4"
+          >
+            Sign up
+          </button>
         </ul>
       </nav>
       <main className={styles.main}>
@@ -73,7 +83,7 @@ export default function Home() {
         </div>
       </main>
       <Slider>
-        <SignIn />
+      {renderedComponent}
       </Slider>
       {sliderState && (
         <div className="fixed opacity-60 bg-black inset-0 overflow-y-auto"></div>
