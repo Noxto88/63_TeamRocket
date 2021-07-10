@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeSlidingComponent } from "../../redux/sliderSlice";
 import { setInitiial } from "../../redux/cartSlice";
 import { useRouter } from "next/router";
+import { LogOutUser } from '../../redux/userSlice';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const Layout = ({ children }) => {
         }
       } else {
         dispatch(LogOutUser());
+        router.push('/')
       }
     });
   }

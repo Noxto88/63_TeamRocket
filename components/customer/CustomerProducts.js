@@ -5,6 +5,8 @@ import { useDispatch } from "react-redux";
 import Navbar from "../customer/Navbar";
 import { closeSlidingComponent } from "../../redux/sliderSlice";
 import { setInitiial } from "../../redux/cartSlice";
+import { auth } from "../../firebase/config";
+
 
 function CustomerProducts({ products }) {
   const dispatch = useDispatch();
