@@ -16,9 +16,9 @@ const Layout = ({ children }) => {
         dispatch(closeSlidingComponent());
         // console.log({ user });
         router.push("/store");
-        //console.log("1");
+        console.log("1");
         const userDetails = await getUserDetails(auth.currentUser.uid);
-        //console.log(userDetails);
+        console.log(auth.currentUser.uid);
         if (userDetails) {
           dispatch(LogInUser(["type of user", user.displayName]));
         }

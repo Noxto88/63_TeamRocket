@@ -21,8 +21,7 @@ export const auth = firebase.auth();
 
 export const createUserProfileDocument = async (userAuth) => {
   if (!userAuth) return;
-
-  const userRef = firestore.doc(`/${userAuth.uid}`);
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
   const snapShot = await userRef.get();
 
   if (!snapShot.exists) {
@@ -41,11 +40,11 @@ export const createUserProfileDocument = async (userAuth) => {
   }
   return userRef;
 };
-
+ 
 export const getUserDetails = async (userAuth) => {
   if (!userAuth) return;
 
-  const userRef = firestore.collection("users").doc(`${userAuth}`);
+  const userRef = firestore.collection("users").doc(`/${userAuth}`);
   let data;
   try {
     await userRef.get().then((doc) => {

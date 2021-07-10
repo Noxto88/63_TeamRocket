@@ -11,7 +11,7 @@ function CustomerProducts({ products }) {
   const dispatch = useDispatch();
   const addToCart = (product) => {
     dispatch(addItem(product));
-    // addProductId(auth.currentUser.uid, id);
+    //addProductId(auth.currentUser.uid, id);
     console.log("called");
   };
 
