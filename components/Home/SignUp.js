@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { auth, createUserProfileDocument } from "../../firebase/config";
 import { useDispatch } from "react-redux";
 import { openSlidingComponent } from "../../redux/sliderSlice";
+import { LogInUser } from "../../redux/userSlice";
 
 const SignUp = () => {
   const _isMounted = useRef(true);

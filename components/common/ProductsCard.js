@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { urlFor } from "../../utils/sanity";
 
-function ProductCard({ _id, title, mainImage,children }) {
+function ProductCard({ _id, title, mainImage, children }) {
   return (
     <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
       <div
@@ -18,7 +18,6 @@ function ProductCard({ _id, title, mainImage,children }) {
         <h3 className="text-gray-700 uppercase">{title}</h3>
         {children}
       </div>
-
     </div>
   );
 }
