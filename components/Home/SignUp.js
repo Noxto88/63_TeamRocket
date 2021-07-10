@@ -50,7 +50,7 @@ const SignUp = () => {
       await user.updateProfile({
         displayName: state.displayName,
       });
-      await createUserProfileDocument(user,'consumer');
+      await createUserProfileDocument(user, "consumer");
       dispatch(LogInUser(["customer", state.displayName]));
       router.push("/store");
     } catch (error) {

@@ -50,7 +50,7 @@ const SignUpForSupplier = () => {
       await user.updateProfile({
         displayName: state.displayName,
       });
-      await createUserProfileDocument(user,'supplier');
+      await createUserProfileDocument(user, "supplier");
       dispatch(LogInUser(["supplier", state.displayName]));
       router.push("/market");
     } catch (error) {

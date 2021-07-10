@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "../../components/market/Navbar";
 
-const Market = () => {
+const Order = () => {
   return (
     <div>
       <Navbar />
-      Market
+      Track all orders here
     </div>
   );
 };
 
-export default Market;
+export default Order;

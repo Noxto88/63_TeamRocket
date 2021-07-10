@@ -19,7 +19,7 @@ if (!firebase.apps.length) {
 export const firestore = firebase.firestore();
 export const auth = firebase.auth();
 
-export const createUserProfileDocument = async (userAuth,userType) => {
+export const createUserProfileDocument = async (userAuth, userType) => {
   if (!userAuth) return;
   const userRef = firestore.doc(`users/${userAuth.uid}`);
   const snapShot = await userRef.get();
@@ -33,7 +33,7 @@ export const createUserProfileDocument = async (userAuth,userType) => {
         order: [],
         cart: [],
         favourites: [],
-        userType: userType ? userType : 'customer'
+        userType: userType ? userType : "customer",
       });
     } catch (error) {
       console.log("error creating user", error.message);
@@ -41,7 +41,7 @@ export const createUserProfileDocument = async (userAuth,userType) => {
   }
   return userRef;
 };
- 
+
 export const getUserDetails = async (userAuth) => {
   if (!userAuth) return;
 

@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "../../components/market/Navbar";
 
-const Market = () => {
+const manageProducts = () => {
   return (
     <div>
       <Navbar />
-      Market
+      Space to manage your products
     </div>
   );
 };
 
-export default Market;
+export default manageProducts;

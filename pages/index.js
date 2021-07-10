@@ -17,7 +17,7 @@ export default function Home() {
   const sliderComponents = {
     "Sign up": <SignUp />,
     "Log in": <LogIn />,
-    "Sign up for Supplier": <SignUpForSupplier />
+    "Sign up for Supplier": <SignUpForSupplier />,
   };
   const renderedComponent = sliderComponents[sliderState];
   return (
@@ -44,12 +44,13 @@ export default function Home() {
             Sign up
           </button>
           <button
-            onClick={() => dispatch(openSlidingComponent("Sign up for Supplier"))}
+            onClick={() =>
+              dispatch(openSlidingComponent("Sign up for Supplier"))
+            }
             className="px-4"
           >
             For suppliers
           </button>
-
         </ul>
       </nav>
       <main>
