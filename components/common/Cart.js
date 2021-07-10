@@ -20,7 +20,6 @@ const CartItems = () => {
   return (
     <>
       {item.map((item, index) => {
-        console.log({ item });
         return (
           <div key={item.title} className="flex justify-between mt-6">
             <div className="flex">

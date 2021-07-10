@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { closeSlidingComponent, openSlidingComponent } from "../../redux/sliderSlice";
+import {
+  closeSlidingComponent,
+  openSlidingComponent,
+} from "../../redux/sliderSlice";
 import { auth } from "../../firebase/config";
 
 const LogIn = () => {

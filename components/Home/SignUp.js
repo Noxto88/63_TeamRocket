@@ -3,8 +3,11 @@ import { auth, createUserProfileDocument } from "../../firebase/config";
 import { useDispatch } from "react-redux";
 import { openSlidingComponent } from "../../redux/sliderSlice";
 import { LogInUser } from "../../redux/userSlice";
+import { useRouter } from "next/router";
 
 const SignUp = () => {
+  const router = useRouter();
+
   const _isMounted = useRef(true);
   useEffect(() => {
     return () => {
@@ -49,6 +52,7 @@ const SignUp = () => {
       });
       await createUserProfileDocument(user, { displayName });
       dispatch(LogInUser([state.displayName, ""]));
+      router.push("/store");
     } catch (error) {
       console.log(error.message);
     }

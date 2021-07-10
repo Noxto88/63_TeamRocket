@@ -19,10 +19,10 @@ if (!firebase.apps.length) {
 export const firestore = firebase.firestore();
 export const auth = firebase.auth();
 
-export const createUserProfileDocument = async (userAuth, userType) => {
+export const createUserProfileDocument = async (userAuth) => {
   if (!userAuth) return;
 
-  const userRef = firestore.doc(`${userType}/${userAuth.uid}`);
+  const userRef = firestore.doc(`/${userAuth.uid}`);
   const snapShot = await userRef.get();
 
   if (!snapShot.exists) {

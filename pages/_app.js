@@ -7,8 +7,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Layout>
-      <Component {...pageProps} />
-      </Layout> 
+        <Component {...pageProps} />
+      </Layout>
     </Provider>
   );
 }
