@@ -18,9 +18,4 @@ export const slice = createSlice({
   },
 });
 
-export const { cancel, openSlidingComponent } = slice.actions;
-export const openOrClose = (state) => state.openSlidingComponent.value;
-export const openSlidingComponentState = (state) =>
-  state.openSlidingComponent.component;
-
-export default slice.reducer;
+export const { closeSlidingComponent, openSlidingComponent } = slic
