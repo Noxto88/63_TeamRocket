@@ -39,3 +39,22 @@ export const createUserProfileDocument = async (userAuth, userType) => {
   }
   return userRef;
 };
+
+export const getUserDetails = async (userAuth) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.collection("users").doc(`${userAuth}`);
+  let data;
+  try {
+    await userRef.get().then((doc) => {
+      if (doc.exists) {
+        data = doc.data();
+      } else {
+        console.log("doc not found");
+      }
+    });
+  } catch (error) {
+    console.log("error setting products", error.message);
+  }
+  return data;
+};

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { openSlidingComponent } from "../../redux/sliderSlice";
+import { closeSlidingComponent, openSlidingComponent } from "../../redux/sliderSlice";
+import { auth } from "../../firebase/config";
 
 const LogIn = () => {
   const _isMounted = useRef(true);
@@ -19,7 +20,7 @@ const LogIn = () => {
     const { email, password } = state;
     try {
       await auth.signInWithEmailAndPassword(email, password);
-      dispatch(toggleForm());
+      dispatch(closeSlidingComponent());
       setState({
         email: "",
         password: "",

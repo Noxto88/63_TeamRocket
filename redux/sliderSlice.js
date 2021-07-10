@@ -12,7 +12,7 @@ export const slice = createSlice({
       state.component = action.payload;
     },
     closeSlidingComponent: (state) => {
-      state.value = !state.value;
+      state.value = false;
       state.component = null;
     },
   },
