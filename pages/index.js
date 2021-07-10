@@ -9,6 +9,7 @@ import LogIn from "../components/Home/LogIn";
 import SignUp from "../components/Home/SignUp";
 import Image from "next/image";
 import HeroPic from "../public/hero.png";
+import SignUpForSupplier from "../components/Home/SignUpForSupplier";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export default function Home() {
   const sliderComponents = {
     "Sign up": <SignUp />,
     "Log in": <LogIn />,
+    "Sign up for Supplier": <SignUpForSupplier />
   };
   const renderedComponent = sliderComponents[sliderState];
   return (
@@ -41,6 +43,13 @@ export default function Home() {
           >
             Sign up
           </button>
+          <button
+            onClick={() => dispatch(openSlidingComponent("Sign up for Supplier"))}
+            className="px-4"
+          >
+            For suppliers
+          </button>
+
         </ul>
       </nav>
       <main>

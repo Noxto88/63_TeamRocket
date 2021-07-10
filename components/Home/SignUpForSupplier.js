@@ -5,7 +5,7 @@ import { openSlidingComponent } from "../../redux/sliderSlice";
 import { LogInUser } from "../../redux/userSlice";
 import { useRouter } from "next/router";
 
-const SignUp = () => {
+const SignUpForSupplier = () => {
   const router = useRouter();
 
   const _isMounted = useRef(true);
@@ -50,9 +50,9 @@ const SignUp = () => {
       await user.updateProfile({
         displayName: state.displayName,
       });
-      await createUserProfileDocument(user,'consumer');
-      dispatch(LogInUser(["customer", state.displayName]));
-      router.push("/store");
+      await createUserProfileDocument(user,'supplier');
+      dispatch(LogInUser(["supplier", state.displayName]));
+      router.push("/market");
     } catch (error) {
       console.log(error.message);
     }
@@ -149,4 +149,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpForSupplier;
