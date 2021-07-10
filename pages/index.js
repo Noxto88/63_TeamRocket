@@ -33,13 +33,13 @@ export default function Home() {
         <ul className="flex">
           <button
             onClick={() => dispatch(openSlidingComponent("Log in"))}
-            className="px-4"
+            className="px-4 hover:text-primary"
           >
             Login
           </button>
           <button
             onClick={() => dispatch(openSlidingComponent("Sign up"))}
-            className="px-4"
+            className="px-4  hover:text-primary"
           >
             Sign up
           </button>
@@ -47,7 +47,7 @@ export default function Home() {
             onClick={() =>
               dispatch(openSlidingComponent("Sign up for Supplier"))
             }
-            className="px-4"
+            className="px-4  hover:text-primary"
           >
             For suppliers
           </button>
