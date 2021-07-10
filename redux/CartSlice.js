@@ -18,11 +18,7 @@ export const slice = createSlice({
   },
 });
 
-export const {
-  addItem,
-  removeItem,
-  setInitiial,
-} = slice.actions;
+export const { addItem, removeItem, setInitiial } = slice.actions;
 export const selectItem = (state) => state.cartItem.value;
 export const selectCounter = (state) => state.cartItem.counter;
 
