@@ -7,7 +7,7 @@ function ProductCard({ _id, title, mainImage, children }) {
       <div
         className="flex items-end justify-end h-56 w-full bg-cover"
         style={{
-          backgroundImage: `url('${urlFor(mainImage)
+          backgroundImage: `url('${urlFor(mainImage.asset)
             .auto("format")
             .fit("crop")
             .width(750)
