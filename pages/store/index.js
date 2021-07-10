@@ -4,7 +4,7 @@ import { getClient, usePreviewSubscription } from "../../utils/sanity";
 import ProductsPage from "../../components/common/ProductsPage";
 
 const query = `//groq
-  *[_type == "product" && defined(slug.current)]
+  *[_type == "product"]
 `;
 
 function ProductsPageContainer({ productsData, preview }) {
