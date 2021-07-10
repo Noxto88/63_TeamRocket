@@ -20,6 +20,7 @@ export const slice = createSlice({
 
 export const { closeSlidingComponent, openSlidingComponent } = slice.actions;
 export const openOrClose = (state) => state.openSlidingComponent.value;
-export const openSlidingComponentState = (state) => state.openSlidingComponent.component;
+export const openSlidingComponentState = (state) =>
+  state.openSlidingComponent.component;
 
 export default slice.reducer;
