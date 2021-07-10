@@ -15,7 +15,7 @@ function ProductCard({ _id, title, mainImage, children }) {
         }}
       ></div>
       <div className="flex flex-col justify-center px-5 py-3">
-        <h3 className="text-gray-700 uppercase">{title}</h3>
+        <h3 className="text-center text-gray-700 uppercase">{title}</h3>
         {children}
       </div>
     </div>
