@@ -1,7 +1,7 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import SlidingContainer from "../components/common/SlidingContainer";
+import Head from 'next/head'
+import Image from 'next/image'
+import styles from '../styles/Home.module.css'
+import Slider from '../components/common/Slider'
 import { useSelector, useDispatch } from "react-redux";
 import {
   openSlidingComponentState,
@@ -20,14 +20,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <nav>
-        <ul className="flex">
-          <button
-            onClick={() => dispatch(openSlidingComponent("Log In"))}
-            className="px-4"
-          >
-            Login
-          </button>
-          <li className="px-4">Sign up</li>
+        <ul className='flex'>
+          <button onClick={() => dispatch(openSlidingComponent("Log In"))}
+
+          className='px-4'>Login</button>
+          <li className='px-4'>Sign up</li>
         </ul>
       </nav>
       <main className={styles.main}>
@@ -36,7 +33,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
+          Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -70,19 +67,20 @@ export default function Home() {
           </a>
         </div>
       </main>
-      <SlidingContainer />
+      <Slider />
+      {sliderState && <div className="fixed opacity-60 bg-black inset-0 overflow-y-auto"></div>}
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  );
+  )
 }
