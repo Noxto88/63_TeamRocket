@@ -19,7 +19,7 @@ if (!firebase.apps.length) {
 export const firestore = firebase.firestore();
 export const auth = firebase.auth();
 
-export const createUserProfileDocument = async (userAuth,userType) => {
+export const createUserProfileDocument = async (userAuth, userType) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`${userType}/${userAuth.uid}`);

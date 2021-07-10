@@ -16,9 +16,8 @@ export default function Home() {
   const sliderComponents = {
     "Sign up": <SignUp />,
     "Log in": <LogIn />,
-  }
+  };
   const renderedComponent = sliderComponents[sliderState];
-  console.log({renderedComponent})
   return (
     <div className={styles.container}>
       <Head>
@@ -82,9 +81,7 @@ export default function Home() {
           </a>
         </div>
       </main>
-      <Slider>
-      {renderedComponent}
-      </Slider>
+      <Slider>{renderedComponent}</Slider>
       {sliderState && (
         <div className="fixed opacity-60 bg-black inset-0 overflow-y-auto"></div>
       )}
