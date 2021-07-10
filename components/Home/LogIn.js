@@ -85,7 +85,7 @@ const LogIn = () => {
         <div className="mt-2">
           <button
             type="submit"
-            className="p-3 bg-indigo-400 text-white w-full hover:bg-indigo-300"
+            className="p-3 bg-primary text-white w-full hover:opacity-90"
           >
             Log in
           </button>

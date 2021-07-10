@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeSlidingComponent } from "../../redux/sliderSlice";
 import { setInitiial } from "../../redux/cartSlice";
 import { useRouter } from "next/router";
-import { LogOutUser } from '../../redux/userSlice';
+import { LogOutUser } from "../../redux/userSlice";
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
@@ -14,17 +14,17 @@ const Layout = ({ children }) => {
     return auth.onAuthStateChanged(async (user) => {
       if (user) {
         dispatch(closeSlidingComponent());
-        console.log({ user });
+        // console.log({ user });
         router.push("/store");
-        console.log("1");
+        //console.log("1");
         const userDetails = await getUserDetails(auth.currentUser.uid);
-        console.log(userDetails);
+        //console.log(userDetails);
         if (userDetails) {
           dispatch(LogInUser(["type of user", user.displayName]));
         }
       } else {
         dispatch(LogOutUser());
-        router.push('/')
+        router.push("/");
       }
     });
   }

@@ -7,11 +7,10 @@ import { closeSlidingComponent } from "../../redux/sliderSlice";
 import { setInitiial } from "../../redux/cartSlice";
 import { auth } from "../../firebase/config";
 
-
 function CustomerProducts({ products }) {
   const dispatch = useDispatch();
-  const addToCart = () => {
-    dispatch(addItem(products));
+  const addToCart = (product) => {
+    dispatch(addItem(product));
     // addProductId(auth.currentUser.uid, id);
     console.log("called");
   };
@@ -31,7 +30,7 @@ function CustomerProducts({ products }) {
             <div key={product._id}>
               <ProductCard {...product}>
                 <button
-                  onClick={addToCart}
+                  onClick={() => addToCart(product)}
                   className="bg-primary text-white px-4 py-2"
                 >
                   Add Item
