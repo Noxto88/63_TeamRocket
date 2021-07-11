@@ -3,7 +3,7 @@ import React from "react";
 import { auth } from "../../firebase/config";
 import { useDispatch } from "react-redux";
 import { setInitiial } from "../../redux/cartSlice";
-const Navbar = ({ LogOut }) => {
+const NavbarMarket = ({ LogOut }) => {
   const dispatch = useDispatch();
   const logOut = () => {
     auth.signOut();
@@ -19,10 +19,6 @@ const Navbar = ({ LogOut }) => {
           <a className="underline px-4">Manage my products</a>
         </Link>
 
-        <Link href="/market/order">
-          <a className="underline px-4">Order history</a>
-        </Link>
-
         <button className="underline px-4" onClick={() => logOut()}>
           Log out
         </button>
@@ -31,4 +27,4 @@ const Navbar = ({ LogOut }) => {
   );
 };
 
-export default Navbar;
+export default NavbarMarket;

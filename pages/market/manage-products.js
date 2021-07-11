@@ -1,11 +1,12 @@
 import React from "react";
-import Navbar from "../../components/market/Navbar";
+import Navbar from "../../components/market/NavbarMarket";
+import ManageItems from "../../components/market/ManageItems";
 
 const manageProducts = () => {
   return (
     <div>
       <Navbar />
-      Space to manage your products
+      <ManageItems />
     </div>
   );
 };

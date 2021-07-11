@@ -18,7 +18,6 @@ const Layout = ({ children }) => {
         const userDetails = await getUserDetails(auth.currentUser.uid);
         console.log({ userDetails }, userDetails.userType);
         const { userType } = userDetails;
-        console.log(userType);
         userType ? router.push("/market") : router.push("/store");
 
         if (userDetails) {

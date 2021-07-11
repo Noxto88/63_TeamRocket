@@ -11,12 +11,6 @@ const Navbar = ({ LogOut }) => {
         <Link href="/store/cart">
           <a className="underline px-4">Cart</a>
         </Link>
-        <Link href="/store/mostbought">
-          <a className="underline px-4">Most Bought</a>
-        </Link>
-        <Link href="/store/order">
-          <a className="underline px-4">Order history</a>
-        </Link>
 
         <button className="underline px-4" onClick={() => LogOut()}>
           Log out
