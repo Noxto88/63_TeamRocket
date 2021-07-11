@@ -8,7 +8,9 @@ const CartPage = () => {
     <div>
       <Navbar />
       <Cart />
-   
+      <div>
+      <Supplier />
+      </div>
     </div>
   );
 };

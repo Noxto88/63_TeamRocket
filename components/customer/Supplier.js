@@ -1,23 +1,31 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
-import { selectStoreItem,selectStoreUser } from '../../redux/storeSlice'
+import { selectStoreItem,selectStoreUser,selectStorePrice } from '../../redux/storeSlice'
 import { useSelector } from 'react-redux'
-
+import { urlFor } from '../../firebase/config'
+ 
 const Supplier = () => {
-const item = useSelector(selectStoreItem)
+const items = useSelector(selectStoreItem)
 const user = useSelector(selectStoreUser)
+const price = useSelector(selectStorePrice)
     return (
         <div>
-            <img
-              className="flex items-end justify-end h-56 w-full bg-cover"
-              src={urlFor(item.mainImage)
-                .auto("format")
-                .width(750)
-                .fit("crop")
-                .quality(80)}
-              alt={item.mainImage?.alt || `Photo of ${item.title}`}
-            />
-            {user}
+      {items.map((item, index) => {
+        console.log(item.mainImage);
+        return (
+          <div
+            key={item.title}
+          >
+         
+            <div className="mx-3">
+              <h3 className="text-sm text-gray-600">{item.title}</h3>
+              {user}
+            {price}
+            </div>
+          </div>
+        );
+      })}
+         
         </div>
     )
 }

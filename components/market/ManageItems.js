@@ -58,7 +58,7 @@ const ManageItems = () => {
                   required
                   min="1" 
                 />
-                <button className='px-2 bg-primary text-white' onClick={()=> dispatch(addToStore([item,user.name]))}>Publish</button>
+                <button className='px-2 bg-primary text-white' onClick={()=> dispatch(addToStore([item,user.name,price]))}>Publish</button>
               </div>
               <button onClick={() => removeProductFromCart(index)} className="">
                 <RiDeleteBin6Line size={42} color="grey" />
