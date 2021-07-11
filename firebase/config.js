@@ -60,3 +60,19 @@ export const getUserDetails = async (userAuth) => {
   }
   return data;
 };
+
+
+export const addProductId = async (userAuth, id) => {
+  if (!userAuth) return;
+
+  const productRef = firestore.collection("/users").doc(`/${userAuth}`);
+  try {
+    await productRef.update({
+      order: firebase.firestore.FieldValue.arrayUnion(id),
+    });
+    console.log("added");
+  } catch (error) {
+    console.log("error adding product", error.message);
+  }
+  return productRef;
+};

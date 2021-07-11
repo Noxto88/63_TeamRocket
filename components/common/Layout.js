@@ -14,9 +14,7 @@ const Layout = ({ children }) => {
     return auth.onAuthStateChanged(async (user) => {
       if (user) {
         dispatch(closeSlidingComponent());
-        console.log("1");
         const userDetails = await getUserDetails(auth.currentUser.uid);
-        console.log({ userDetails }, userDetails.userType);
         const { userType } = userDetails;
         userType ? router.push("/market") : router.push("/store");
 
